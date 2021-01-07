@@ -45,7 +45,7 @@ metadata:
   namespace: y509456-neogrid-space
 spec:	
   rules:
-  - host: ENDPOINT.daeidemo02.k8s.eur.ad.sag
+  - host: ENDPOINT.*
     http:
       paths:
       - backend:
@@ -54,6 +54,6 @@ spec:
         path: /
   tls:
   - hosts:
-    - ENDPOINT.daeidemo02.k8s.eur.ad.sag
-    secretName: daeidemo02 
+    - ENDPOINT.*
+    secretName: default-token-k8f9q 
  
