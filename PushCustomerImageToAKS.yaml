@@ -30,30 +30,10 @@ metadata:
   name: SERVICENAME
   namespace: y509456-neogrid-space
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: APPNAME
   ports:
   - protocol: TCP
     port: 5555
     targetPort: 5555
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: SERVICENAME
-  namespace: y509456-neogrid-space
-spec:	
-  rules:
-  - host: ENDPOINT.*
-    http:
-      paths:
-      - backend:
-          serviceName: SERVICENAME
-          servicePort: 5555
-        path: /
-  tls:
-  - hosts:
-    - ENDPOINT.*
-    secretName: default-token-k8f9q 
- 
